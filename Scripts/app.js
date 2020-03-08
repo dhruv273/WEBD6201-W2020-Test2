@@ -12,6 +12,13 @@ class Contact
     }
 }
 
+class taskText
+{
+constructor(taskTextInput="")
+{
+     this.taskTextInput=taskTextInput;
+}
+}
 
 
 
@@ -25,7 +32,7 @@ let app;
     // Declare Function Variables here...
     console.log("%cDeclaring Variables", "color: red;")
     let contactObject = new Contact();
-
+    let taskTextobject = new taskText();
     /**
      * Variable initialization in this function
      *
@@ -102,11 +109,22 @@ let app;
     function DisplayTaskList()
     {
         document.title = "WEBD6201 - Task List";
-
+        let taskTextInput = document.getElementById("taskTextInput").innerHTML.valueOf.taskTextInput;
+        let newTaskButton = document.getElementById("newTaskButton");
+        let taskText = document.getElementById("taskText");
+        
         // Task 1 a
         $("#newTaskButton").on("click", function(){
+            //e.preventDefault();
+            let taskTextInput = $("#taskTextInput").val();
+
+            //console.log(`user task: ${taskTextInput}`);
+            document.getElementById("taskText").innerHTML=  taskTextInput;
+            let newElement = document.createElement('li');
+            document.appendChild(newElement);
             
         });
+
 
         // Task 1 b
         $("ul").on("click", ".editButton", function(){
@@ -115,10 +133,12 @@ let app;
 
         // Task 1 c
         $("ul").on("click", ".deleteButton", function(){
+           window.Boolean("are you sure??");
            
         });
     }
 
+    
     function DisplayProductsContent()
     {
         document.title = "WEBD6201 - Products";
