@@ -129,12 +129,18 @@ let app;
         // Task 1 b
         $("ul").on("click", ".editButton", function(){
            
+
         });
 
         // Task 1 c
         $("ul").on("click", ".deleteButton", function(){
-           window.Boolean("are you sure??");
-           
+           let result =confirm("Are you sure you want to delete this task??");
+             console.log(result);
+            if (result==true)
+            {
+              taskText.remove();
+              
+            }
         });
     }
 
